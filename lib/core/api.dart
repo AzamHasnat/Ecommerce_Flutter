@@ -7,7 +7,7 @@ const Map<String, dynamic> DEFAULT_HEADER = {
 };
 
 class Api {
-  final Dio _dio = Dio(); //_dio here _ means private
+  final Dio _dio = Dio(); //_dio => here _ means private
 
   Api() {
     _dio.options.baseUrl = BASE_URL;
@@ -23,7 +23,7 @@ class Api {
         responseHeader: true));
   }
 
-  // dio is private,To get dio we use this method
+  // dio is private,To get dio we use this get method
   Dio get sendRequest => _dio;
 }
 
