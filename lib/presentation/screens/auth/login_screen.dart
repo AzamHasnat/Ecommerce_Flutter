@@ -1,3 +1,5 @@
+import 'package:ecommerce_flutter/core/ui.dart';
+import 'package:ecommerce_flutter/presentation/widgets/primary_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,21 +30,19 @@ class _LoginScreenState extends State<LoginScreen> {
           child: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          const Text(
+           Text(
             "Log In",
-            style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
-          ),
+            style: TextStyles.heading2),
           const SizedBox(height: 16),
-          TextFormField(
+          PrimaryTextField(
             controller: emailController,
-          
-            decoration: const InputDecoration(labelText: "Email Address",border: OutlineInputBorder()),
+            labelText: "Email Address",
           ),
           const SizedBox(height: 16),
-          TextFormField(
-            obscureText: true,
+          PrimaryTextField(
             controller: passwordController,
-            decoration: const InputDecoration(labelText: "Password",border: OutlineInputBorder()),
+            labelText: "Password",
+            obscureText: true,
           ),
           const SizedBox(height: 16),
           CupertinoButton(
