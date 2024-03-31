@@ -1,4 +1,6 @@
 import 'package:ecommerce_flutter/core/ui.dart';
+import 'package:ecommerce_flutter/presentation/widgets/link_button.dart';
+import 'package:ecommerce_flutter/presentation/widgets/primary_button.dart';
 import 'package:ecommerce_flutter/presentation/widgets/primary_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: ListView(
         padding: EdgeInsets.all(16),
         children: [
-           Text(
-            "Log In",
-            style: TextStyles.heading2),
+          Text("Log In", style: TextStyles.heading2),
           const SizedBox(height: 16),
           PrimaryTextField(
             controller: emailController,
@@ -44,11 +44,19 @@ class _LoginScreenState extends State<LoginScreen> {
             labelText: "Password",
             obscureText: true,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              LinkButton(
+                text: "Forgot Password?",
+                onPressed: () {},
+              ),
+            ],
+          ),
           const SizedBox(height: 16),
-          CupertinoButton(
-            child: const Text("Login"),
+          PrimaryButton(
+            text: "Login",
             onPressed: () {},
-            color: Colors.blue[500],
           ),
           const SizedBox(height: 16),
           Row(
@@ -58,12 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 "Don't have an account?",
                 style: TextStyle(fontSize: 16),
               ),
-              CupertinoButton(
-                  child: const Text(
-                    "Sign up",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  onPressed: () {})
+              LinkButton(
+                text: "Sign Up",
+                onPressed: () {},
+              )
             ],
           )
         ],
